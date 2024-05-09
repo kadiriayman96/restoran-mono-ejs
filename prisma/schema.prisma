@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model categorie {
+  id_categorie String  @id @db.Char(36)
+  nom          String  @db.VarChar(100)
+  repas        repas[]
+}
+
+model employes {
+  id_employe    String       @id @db.Char(36)
+  nom           String       @db.VarChar(255)
+  designation   String?      @db.VarChar(100)
+  url_image     String?      @db.VarChar(255)
+  facebook_url  String?      @db.VarChar(255)
+  instagram_url String?      @db.VarChar(255)
+  twitter_url   String?      @db.VarChar(255)
+  id_restaurant String?      @db.Char(36)
+  restaurants   restaurants? @relation(fields: [id_restaurant], references: [id_restaurant], onDelete: Cascade, onUpdate: NoAction, map: "employes_ibfk_1")
+
+  @@index([id_restaurant], map: "id_restaurant")
+}
+
+model newsletters {
+  id_newsletter String @id @db.Char(36)
+  email         String @unique(map: "email") @db.VarChar(100)
+}
+
+model repas {
+  id_repas     String     @id @db.Char(36)
+  nom          String     @db.VarChar(255)
+  description  String?    @map("_description") @db.Text
+  prix         Decimal    @db.Decimal(10, 2)
+  url_image    String?    @db.VarChar(255)
+  id_categorie String?    @db.Char(36)
+  categorie    categorie? @relation(fields: [id_categorie], references: [id_categorie], onDelete: Cascade, onUpdate: NoAction, map: "repas_ibfk_1")
+
+  @@index([id_categorie], map: "id_categorie")
+}
+
+model restaurants {
+  id_restaurant    String     @id @db.Char(36)
+  adresse          String     @db.VarChar(255)
+  numero_telephone String?    @db.VarChar(20)
+  email            String?    @db.VarChar(100)
+  url_facebook     String?    @db.VarChar(255)
+  url_youtube      String?    @db.VarChar(255)
+  url_twitter      String?    @db.VarChar(255)
+  url_linkedin     String?    @db.VarChar(255)
+  employes         employes[]
+}
