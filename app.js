@@ -36,8 +36,6 @@ app.use((error, req, res, next) => {
   console.log(error.stack);
 });
 
-// Log data
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}...`);
 });
