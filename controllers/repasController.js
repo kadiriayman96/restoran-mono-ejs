@@ -9,7 +9,8 @@ const prisma = new PrismaClient();
 const getCategories = async (req, res) => {
   try {
     const categories = await prisma.categorie.findMany();
-    return res.render("ajouterRepas", { categories });
+    const restaurantData = await prisma.restaurants.findFirst();
+    return res.render("ajouterRepas", { categories, restaurantData });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
