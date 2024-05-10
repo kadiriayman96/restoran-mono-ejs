@@ -4,6 +4,7 @@ import { homeRouter } from "./routers/homeRouter.js";
 import { contactRouter } from "./routers/contactRouter.js";
 import { aboutRouter } from "./routers/aboutRouter.js";
 import { repasRouter } from "./routers/repasRouter.js";
+import { employeeRouter } from "./routers/employeRouter.js";
 import { logData } from "./middlewares/logs.js";
 
 const prisma = new PrismaClient();
@@ -25,6 +26,7 @@ app.use("/home", homeRouter);
 app.use("/contact", contactRouter);
 app.use("/about", aboutRouter);
 app.use("/ajouterRepas", repasRouter);
+app.use("/ajouterEmployee", employeeRouter);
 
 // Middleware pour gérer les URL mal écrites (404)
 app.use((req, res, next) => {
