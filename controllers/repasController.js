@@ -10,7 +10,16 @@ const getCategories = async (req, res) => {
   try {
     const categories = await prisma.categorie.findMany();
     const restaurantData = await prisma.restaurants.findFirst();
-    return res.render("ajouterRepas", { categories, restaurantData });
+
+    const emailSent = req.query.emailSent === "true";
+    const emailSentQueryParam = req.query.emailSent;
+
+    res.render("ajouterRepas", {
+      categories,
+      restaurantData,
+      emailSent,
+      emailSentQueryParam,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

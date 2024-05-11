@@ -11,20 +11,32 @@ const homeController = async (req, res) => {
 };
 
 const renderHome = async (req, res) => {
-  const repasList = await prisma.repas.findMany({
-    include: {
-      categorie: true,
-    },
-  });
+  try {
+    const repasList = await prisma.repas.findMany({
+      include: {
+        categorie: true,
+      },
+    });
 
-  const employeeList = await prisma.employes.findMany();
-  const restaurantData = await prisma.restaurants.findFirst();
+    const employeeList = await prisma.employes.findMany();
+    const restaurantData = await prisma.restaurants.findFirst();
 
-  res.render("home", {
-    repasList,
-    employeeList,
-    restaurantData,
-  });
+    // Check if the query parameter indicates email was sent successfully
+    const emailSent = req.query.emailSent === "true";
+    const emailSentQueryParam = req.query.emailSent;
+
+    // Render the EJS template with the appropriate email sent flag
+    res.render("home", {
+      repasList,
+      employeeList,
+      restaurantData,
+      emailSent,
+      emailSentQueryParam, // Pass the query parameter value to the template
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 };
 
 export { homeController };

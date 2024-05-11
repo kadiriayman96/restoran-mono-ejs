@@ -21,9 +21,7 @@ const sendEmail = async (req, res, next) => {
     });
 
     if (existEmail) {
-      return res
-        .status(400)
-        .send("<script>alert('Email already exists!')</script>");
+      return res.redirect("/home?emailSent=false");
     }
 
     // Create a nodemailer transporter
@@ -52,11 +50,7 @@ const sendEmail = async (req, res, next) => {
     transporter.sendMail(mailOptions, async (error, info) => {
       if (error) {
         console.error(error);
-        return res
-          .status(500)
-          .send(
-            "<script>alert('Failed to send email. Please try again later.!')</script>"
-          );
+        return res.redirect("/home?emailSent=false");
       } else {
         const savedEmail = await prisma.newsletters.create({
           data: {
@@ -65,15 +59,12 @@ const sendEmail = async (req, res, next) => {
           },
         });
         console.log("Email saved:", savedEmail);
-
-        return res.redirect("/home");
+        return res.redirect("/home?emailSent=true");
       }
     });
   } catch (error) {
     console.error(error);
-    return res
-      .status(500)
-      .json({ message: "Failed to send email. Please try again later." });
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 

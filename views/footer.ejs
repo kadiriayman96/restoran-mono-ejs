@@ -14,7 +14,7 @@
         <a class="btn btn-link" href="/about">About Us</a>
         <a class="btn btn-link" href="/contact">Contact Us</a>
         <a class="btn btn-link" href="/ajouterRepas">Ajouter un repas</a>
-        <a class="btn btn-link" href="">Privacy Policy</a>
+        <a class="btn btn-link" href="/ajouterEmployee">Ajouter un employe</a>
         <a class="btn btn-link" href="">Terms & Condition</a>
       </div>
 
@@ -128,4 +128,13 @@
     </div>
   </div>
 </div>
-<!-- Footer End -->
+
+<% if (emailSent === true && emailSentQueryParam === "true") { %>
+<script>
+  alert("Email sent successfully!");
+</script>
+<% } else if (emailSent === false && emailSentQueryParam === "false") { %>
+<script>
+  alert("Email not sent!");
+</script>
+<% } %>
