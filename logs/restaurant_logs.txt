@@ -700,3 +700,17 @@
 [2024-05-11T11:55:13.827Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200
 [2024-05-11T11:55:33.825Z] GET /about  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200
 [2024-05-11T11:55:33.995Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200
+[2024-05-14T09:06:06.045Z] GET /home  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /home
+[2024-05-14T09:06:07.090Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:06:12.234Z] GET /contact  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /contact
+[2024-05-14T09:06:13.718Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:06:17.236Z] GET /ajouterEmployee  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /ajouterEmployee
+[2024-05-14T09:06:17.454Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:06:22.280Z] GET /ajouterEmployee  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /ajouterEmployee
+[2024-05-14T09:06:22.437Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:06:23.864Z] GET /ajouterEmployee  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /ajouterEmployee
+[2024-05-14T09:06:24.020Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:06:25.014Z] GET /home  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /home
+[2024-05-14T09:06:25.269Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200 /img/favicon.ico
+[2024-05-14T09:11:50.862Z] GET /home  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200
+[2024-05-14T09:11:51.163Z] GET /img/favicon.ico  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 ::1 200
