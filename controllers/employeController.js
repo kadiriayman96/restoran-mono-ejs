@@ -38,8 +38,6 @@ const ajouterEmployee = async (req, res, next) => {
     } = req.body;
     const url_image = req.file ? `/img/${req.file.filename}` : null;
 
-    console.log(req.body);
-
     const newEmploye = await prisma.employes.create({
       data: {
         id_employe: uuidv4(),
@@ -55,7 +53,6 @@ const ajouterEmployee = async (req, res, next) => {
         restaurants: true,
       },
     });
-    console.log(newEmploye);
     return res.redirect("/home");
   } catch (error) {
     console.error(error);

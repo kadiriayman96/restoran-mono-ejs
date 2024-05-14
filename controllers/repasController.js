@@ -31,8 +31,6 @@ const ajouterRepas = async (req, res, next) => {
     const { nom, description, prix, id_categorie } = req.body;
     const url_image = req.file ? `/img/${req.file.filename}` : null;
 
-    console.log(req.body);
-
     const newRepas = await prisma.repas.create({
       data: {
         id_repas: uuidv4(),

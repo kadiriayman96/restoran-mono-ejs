@@ -58,7 +58,6 @@ const sendEmail = async (req, res, next) => {
             email,
           },
         });
-        console.log("Email saved:", savedEmail);
         return res.redirect("/home?emailSent=true");
       }
     });
