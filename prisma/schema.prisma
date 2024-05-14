@@ -55,3 +55,13 @@ model restaurants {
   url_linkedin     String?    @db.VarChar(255)
   employes         employes[]
 }
+
+model reservation {
+  reservation_id     String    @id @db.VarChar(100)
+  nom_client         String    @db.VarChar(100)
+  email_client       String    @db.VarChar(100)
+  date_reservation   DateTime
+  nombre_clients     Int
+  demandes_speciales String?   @db.Text
+  cree_le            DateTime? @default(now()) @db.Timestamp
+}

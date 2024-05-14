@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
+import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 
 const homeController = async (req, res) => {
   try {
@@ -39,4 +41,43 @@ const renderHome = async (req, res) => {
   }
 };
 
-export { homeController };
+const bookNow = async (req, res) => {
+  try {
+    const {
+      nom_client,
+      email_client,
+      date_reservation,
+      nombre_clients,
+      demandes_speciales,
+    } = req.body;
+
+    console.log(
+      nom_client,
+      email_client,
+      date_reservation,
+      nombre_clients,
+      demandes_speciales
+    );
+
+    //convert date to date
+    const dateObject = moment(date_reservation, "MM/DD/YYYY hh:mm A").toDate();
+    console.log(dateObject);
+
+    // const reservation = await prisma.reservation.create({
+    //   data: {
+    //     reservation_id: uuidv4(),
+    //     nom_client,
+    //     email_client,
+    //     date_reservation: new Date(date_reservation),
+    //     nombre_clients,
+    //     demandes_speciales,
+    //   },
+    // });
+    // console.log("Reservation created:", reservation);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
+export { homeController, bookNow };
