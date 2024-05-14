@@ -1,15 +1,20 @@
+import validationEmployee from "../middlewares/validationEmployee.js";
+import upload from "../middlewares/imageUpload.js";
+import express from "express";
 import {
   ajouterEmployee,
-  upload,
   getRestaurants,
 } from "../controllers/employeController.js";
-import validationEmployee from "../middlewares/validationEmployee.js";
-import express from "express";
 
 const employeeRouter = express.Router();
 
 employeeRouter.get("/", getRestaurants);
 
-employeeRouter.post("/", upload, validationEmployee, ajouterEmployee);
+employeeRouter.post(
+  "/",
+  upload.single("url_image"),
+  validationEmployee,
+  ajouterEmployee
+);
 
 export { employeeRouter };
