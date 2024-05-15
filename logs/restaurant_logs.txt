@@ -946,3 +946,13 @@
 [2024-05-15T14:04:25.004Z], POST, /home/bookNow,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
 [2024-05-15T14:04:25.122Z], GET, /home,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
 [2024-05-15T14:04:25.402Z], GET, /img/favicon.ico,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:04.049Z], GET, /ajouterRepas,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:04.655Z], GET, /img/favicon.ico,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:09.605Z], POST, /home/sendEmail,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:09.679Z], GET, /home?emailSent=false,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:13.023Z], GET, /img/favicon.ico,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:36.068Z], POST, /home/sendEmail,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:39.680Z], GET, /home?emailSent=true,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:20:42.180Z], GET, /img/favicon.ico,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:21:57.398Z], GET, /home,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
+[2024-05-15T15:21:57.656Z], GET, /img/favicon.ico,  Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36, ::1, 200
