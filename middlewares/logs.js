@@ -6,9 +6,9 @@ const logData = (req, res, next) => {
 
   const logFilePath = path.resolve(cwd, "logs", "restaurant_logs.txt");
 
-  const logMessage = `[${new Date().toISOString()}] ${req.method} ${req.url}  ${
-    req.headers["user-agent"]
-  } ${req.ip} ${res.statusCode}\n`;
+  const logMessage = `[${new Date().toISOString()}], ${req.method}, ${
+    req.url
+  },  ${req.headers["user-agent"]}, ${req.ip}, ${res.statusCode}\n`;
 
   fs.appendFile(logFilePath, logMessage, (err) => {
     if (err) {

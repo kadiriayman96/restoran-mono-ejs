@@ -1,8 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { v4 as uuidv4 } from "uuid";
-import multer from "multer";
-import path from "path";
-
 const prisma = new PrismaClient();
 
 // get list of categories of categories

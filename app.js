@@ -6,6 +6,8 @@ import { aboutRouter } from "./routers/aboutRouter.js";
 import { repasRouter } from "./routers/repasRouter.js";
 import { employeeRouter } from "./routers/employeRouter.js";
 import { logData } from "./middlewares/logs.js";
+import csurf from "csurf";
+import cookieParser from "cookie-parser";
 
 const prisma = new PrismaClient();
 
@@ -15,12 +17,12 @@ const PORT = 1600;
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-// Use express.json middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.static("public"));
 
 app.use(logData);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use("/home", homeRouter);
 app.use("/contact", contactRouter);
