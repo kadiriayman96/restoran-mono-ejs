@@ -58,10 +58,7 @@ const bookNow = async (req, res) => {
       demandes_speciales,
     } = req.body;
 
-    console.log(date_reservation);
     const isoDate = moment(date_reservation, "MM/DD/YYYY h:mm A").toISOString();
-
-    console.log(isoDate);
     const reservation = await prisma.reservation.create({
       data: {
         reservation_id: uuidv4(),
@@ -69,7 +66,7 @@ const bookNow = async (req, res) => {
         email_client,
         date_reservation: isoDate,
         nombre_clients: parseInt(nombre_clients),
-        demandes_speciales,
+        demandes_speciales: demandes_speciales || "",
       },
     });
 
@@ -102,7 +99,7 @@ const bookNow = async (req, res) => {
       if (error) {
         console.error(error);
       } else {
-        console.log("Email sent: " + info.response);
+        console.log("Reservation successfully sent to " + email_client);
       }
     });
 
