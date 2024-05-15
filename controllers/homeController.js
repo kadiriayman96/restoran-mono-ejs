@@ -58,19 +58,21 @@ const bookNow = async (req, res) => {
       demandes_speciales,
     } = req.body;
 
-    date_reservation = moment(date_reservation).format("MM/DD/YYYY hh:mm A");
+    console.log(date_reservation);
+    const isoDate = moment(date_reservation, "MM/DD/YYYY h:mm A").toISOString();
 
+    console.log(isoDate);
     const reservation = await prisma.reservation.create({
       data: {
         reservation_id: uuidv4(),
         nom_client,
         email_client,
-        date_reservation,
+        date_reservation: isoDate,
         nombre_clients: parseInt(nombre_clients),
         demandes_speciales,
       },
     });
-    console.log("Reservation created: " + reservation);
+
     // send mail to client
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
