@@ -1,7 +1,14 @@
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 import moment from "moment";
 import { v4 as uuidv4 } from "uuid";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+const prisma = new PrismaClient();
+dotenv.config();
+
+const user_email = process.env.EMAIL_USERNAME;
+const user_password = process.env.EMAIL_PASSWORD;
 
 const homeController = async (req, res) => {
   try {
@@ -51,20 +58,52 @@ const bookNow = async (req, res) => {
       demandes_speciales,
     } = req.body;
 
-    //convert date to date
-    const dateObject = moment(date_reservation, "MM/DD/YYYY hh:mm A").toDate();
-    console.log(dateObject);
+    date_reservation = moment(date_reservation).format("MM/DD/YYYY hh:mm A");
 
     const reservation = await prisma.reservation.create({
       data: {
         reservation_id: uuidv4(),
         nom_client,
         email_client,
-        date_reservation: dateObject,
+        date_reservation,
         nombre_clients: parseInt(nombre_clients),
         demandes_speciales,
       },
     });
+    console.log("Reservation created: " + reservation);
+    // send mail to client
+    const transporter = nodemailer.createTransport({
+      host: "smtp.zoho.com",
+      port: 465,
+      secure: true, // Use true for port 465, false for all other ports
+      auth: {
+        user: user_email,
+        pass: user_password,
+      },
+    });
+
+    const mailOptions = {
+      from: user_email,
+      to: email_client,
+      subject: "Reservation from Restoran App - Thank you!",
+      text: "You have successfully reserved a table at Restoran App",
+      html: `<p>Dear ${nom_client}, this is a confirmation of your reservation.</p>
+             <p>Summary of your reservation:</p>
+             <p>Date: ${moment(date_reservation).format("MMMM Do YYYY")}</p>
+             <p>Number of guests: ${nombre_clients}</p>
+             <p>Special requests: ${demandes_speciales}</p>
+             <p>Our Reservation team will contact you SOOOON !</p>
+             <p>Thank you for booking!</p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+
     return res.redirect("/home");
   } catch (error) {
     console.log(error);
