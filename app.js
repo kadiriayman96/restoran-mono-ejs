@@ -6,8 +6,6 @@ import { aboutRouter } from "./routers/aboutRouter.js";
 import { repasRouter } from "./routers/repasRouter.js";
 import { employeeRouter } from "./routers/employeRouter.js";
 import { logData } from "./middlewares/logs.js";
-import csurf from "csurf";
-import cookieParser from "cookie-parser";
 
 const prisma = new PrismaClient();
 
